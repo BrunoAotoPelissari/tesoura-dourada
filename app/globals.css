@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* 
+   Design tokens — Tesoura Dourada
+   80% neutros / 15% preto forte / 5% dourado (assinatura da marca)
+ */
+ 
+@theme inline {
+  --color-bg: #faf9f5;
+  --color-bg-soft: #f1eee4;
+  --color-bg-dark: #17150f;
+  --color-ink: #1c1a15;
+  --color-ink-soft: #6e6a5c;
+  --color-ink-on-dark: #f3f1ea;
+  --color-ink-soft-on-dark: #b7b2a2;
+  --color-gold: #a97c2e;
+  --color-gold-bright: #c9992e;
+  --color-gold-pale: #ede2c6;
+  --color-line: #e4dfd1;
+  --color-line-on-dark: #33301f;
+  --color-whatsapp: #25d366;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
