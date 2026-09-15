@@ -8,7 +8,7 @@ export function AssistantBanner({ onOpen }: { onOpen: () => void }) {
     <section className="py-16 md:py-20 bg-bg-dark">
       <div className="max-w-7xl mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         <div>
-          <Eyebrow dark>Assistente exclusivo</Eyebrow>
+          <Eyebrow dark>Assistente de orçamento</Eyebrow>
           <h3 className="font-display text-2xl md:text-[2rem] mb-2 text-ink-on-dark font-medium">
             Não sabe por onde começar?
           </h3>
@@ -17,7 +17,7 @@ export function AssistantBanner({ onOpen }: { onOpen: () => void }) {
             seu time, empresa ou evento.
           </p>
         </div>
-        <GoldButton onClick={onOpen} className="shrink-0">
+        <GoldButton onClick={onOpen} className="shrink-">
           Encontrar o uniforme ideal
         </GoldButton>
       </div>

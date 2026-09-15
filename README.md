@@ -39,7 +39,8 @@ funciona com internet e pode levar um ou dois minutos na primeira vez.
 Depois, para ver o site rodando:
 
 ```bash
-npm run dev
+npm run build #se rodar sem erros 
+npm run start
 ```
 
 O terminal vai mostrar um endereço, normalmente `http://localhost:3000`.
