@@ -36,15 +36,15 @@ export function Hero({ onOpenAssistant }: { onOpenAssistant: () => void }) {
 
         <div className="relative h-[340px] sm:h-[420px] lg:h-[460px]">
           <div className="absolute inset-0 flex flex-wrap content-center gap-3 opacity-90">
-            {swatches.map((sw, i) => (
+            {swatches.map((swatch, index) => (
               <div
-                key={i}
+                key={index}
                 className="rounded-2xl shadow-sm"
                 style={{
-                  backgroundColor: sw,
-                  width: i % 2 === 0 ? "30%" : "22%",
-                  height: i % 3 === 0 ? "150px" : "110px",
-                  transform: `rotate(${(i % 2 === 0 ? -1 : 1) * (2 + i)}deg)`,
+                  backgroundColor: swatch,
+                  width: index % 2 === 0 ? "30%" : "22%",
+                  height: index % 3 === 0 ? "150px" : "110px",
+                  transform: `rotate(${(index % 2 === 0 ? -1 : 1) * (2 + index)}deg)`,
                 }}
               />
             ))}

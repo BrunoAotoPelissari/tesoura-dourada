@@ -29,13 +29,13 @@ export function Header() {
         </button>
 
         <nav className="hidden lg:flex items-center gap-9">
-          {links.map((l) => (
+          {links.map((link) => (
             <button
-              key={l.id}
-              onClick={() => scrollTo(l.id)}
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
               className="text-[0.92rem] font-medium font-sans text-ink-soft transition-opacity hover:opacity-60"
             >
-              {l.label}
+              {link.label}
             </button>
           ))}
         </nav>
@@ -62,13 +62,13 @@ export function Header() {
 
       {open && (
         <div className="lg:hidden px-5 pb-6 flex flex-col gap-1 border-t border-line">
-          {links.map((l) => (
+          {links.map((link) => (
             <button
-              key={l.id}
-              onClick={() => scrollTo(l.id)}
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
               className="text-left py-3 text-[0.95rem] font-medium font-sans text-ink border-b border-line"
             >
-              {l.label}
+              {link.label}
             </button>
           ))}
           <a

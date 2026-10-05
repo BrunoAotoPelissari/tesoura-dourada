@@ -22,10 +22,10 @@ export function Journey() {
             }}
           />
           <div className="grid md:grid-cols-6 gap-8 md:gap-4">
-            {journey.map((step, i) => (
+            {journey.map((step, index) => (
               <div key={step.title} className="relative flex md:flex-col gap-4 md:gap-0 pl-14 md:pl-0">
                 <div className="absolute left-0 md:static md:mb-5 w-11 h-11 rounded-full flex items-center justify-center text-sm font-semibold font-sans shrink-0 bg-bg border-[1.5px] border-gold text-gold">
-                  {i + 1}
+                  {index + 1}
                 </div>
                 <div>
                   <h4 className="font-display text-base mb-1.5 text-ink font-medium">{step.title}</h4>

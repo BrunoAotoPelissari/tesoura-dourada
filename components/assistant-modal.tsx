@@ -15,8 +15,8 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
   const isResult = step === assistantSteps.length;
 
   const pick = (key: AssistantStep["key"], value: string) => {
-    setAnswers((a) => ({ ...a, [key]: value }));
-    setStep((s) => s + 1);
+    setAnswers((answer) => ({ ...answer, [key]: value }));
+    setStep((step) => step + 1);
   };
 
   const resultMessage = `Olá! Usei o assistente do site e busco: ${answers.peca ?? "—"}, para ${answers.quem ?? "—"}, quantidade ${answers.qtd ?? "—"}. Podem me ajudar?`;
@@ -28,7 +28,7 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
     >
       <div
         className="w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl p-7 sm:p-9 relative max-h-[88vh] overflow-y-auto bg-bg"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(element) => element.stopPropagation()}
       >
         <button
           onClick={onClose}
@@ -40,10 +40,10 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
 
         {!isResult && (
           <div className="flex items-center gap-1.5 mb-7">
-            {assistantSteps.map((_, i) => (
+            {assistantSteps.map((_, index) => (
               <div
-                key={i}
-                className={`h-1 rounded-full flex-1 ${i <= step ? "bg-gold" : "bg-line"}`}
+                key={index}
+                className={`h-1 rounded-full flex-1 ${index <= step ? "bg-gold" : "bg-line"}`}
               />
             ))}
           </div>
@@ -58,13 +58,13 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
               {assistantSteps[step].question}
             </h3>
             <div className="flex flex-col gap-2.5">
-              {assistantSteps[step].options.map((opt) => (
+              {assistantSteps[step].options.map((option) => (
                 <button
-                  key={opt}
-                  onClick={() => pick(assistantSteps[step].key, opt)}
+                  key={option}
+                  onClick={() => pick(assistantSteps[step].key, option)}
                   className="text-left px-5 py-4 rounded-xl transition-colors duration-200 flex items-center justify-between group border border-line bg-white text-ink font-sans"
                 >
-                  {opt}
+                  {option}
                   <ChevronRight
                     size={17}
                     className="opacity-0 group-hover:opacity-100 transition-opacity text-gold"
@@ -74,7 +74,7 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
             </div>
             {step > 0 && (
               <button
-                onClick={() => setStep((s) => s - 1)}
+                onClick={() => setStep((step) => step - 1)}
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium font-sans text-ink-soft"
               >
                 <ChevronLeft size={16} /> Voltar
@@ -96,12 +96,12 @@ export function AssistantModal({ onClose }: { onClose: () => void }) {
               você.
             </p>
             <div className="grid grid-cols-2 gap-3 mb-7">
-              {featuredProducts.slice(0, 2).map((p) => (
-                <div key={p.name} className="rounded-xl overflow-hidden border border-line">
-                  <div className="h-20" style={{ backgroundColor: p.swatch }} />
+              {featuredProducts.slice(0, 2).map((products) => (
+                <div key={products.name} className="rounded-xl overflow-hidden border border-line">
+                  <div className="h-20" style={{ backgroundColor: products.swatch }} />
                   <div className="p-3">
                     <p className="text-xs font-medium leading-snug text-ink font-sans">
-                      {p.name}
+                      {products.name}
                     </p>
                   </div>
                 </div>
